@@ -29,7 +29,7 @@ class UsersController < ApplicationController
             end
 
             if cur_ip.count > 2
-                return redirect_to root_path
+                #return redirect_to root_path
             else
                 cur_ip.count = cur_ip.count + 1
                 cur_ip.save
@@ -44,6 +44,15 @@ class UsersController < ApplicationController
             puts params[:user][:email].inspect
             puts request.env['HTTP_X_FORWARDED_FOR'].inspect
             puts '------------'
+
+            m = Mailchimp.new(Rails.configuration.mailchimpApiKey)
+            m.list_subscribe(Rails.configuration.mailchimpListId, {
+              email_address: params[:user][:email],
+              status: "subscribed"
+            })
+            m.automations_emails_add(Rails.configuration.mailchimpAutomationId, Rails.configuration.mailchimpAutomationEmailId, {
+              email_address: params[:user][:email]
+            })
 
             if !@referred_by.nil?
                 @user.referrer = @referred_by
