@@ -1,6 +1,12 @@
+<div style="height: 46px; line-height: 46px; background: #feffdc; text-align: center; font-family: 'Nunito', sans-serif;">
+  <span style="color: #f8c792;">ATTENTION:</span> <span style="color: #000;">Due to extremely high demand Only 3 "prelaunch Promotion" spots left in San Diego, Ca. (<span id="clock"></span> count down) </span>
+</div>
+
 <div class="hero">
-    <p class="large brandon">Harry&#8217;s is live</p>
-    <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
+  <img src="<%= asset_path('home/main.png') %>" height="658" usemap="#main"/>
+  <map name="main">
+    <area shape="rect" coords="14,368,152,404" href="#">
+  </map>
 </div>
 
 <div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
@@ -9,12 +15,88 @@
         <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
         <p class="go-to brandon">In the meantime, head to  <a href="http://www.harrys.com/">WWW.HARRYS.COM</a></p>
         <p class="again brandon">Thank You Again!</p>
-    <% else %>
-        <div class="key"></div>
-        <p class="byline brandon">Be the first to know</p>
+      <% else %>
+
+        <p class="byline brandon">Sign Up Here.  No Obligation!</p>
         <%= form_for @user, :url => { :action => "create" } do |f| %>
             <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-            <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+            <button class="submit brandon" name="commit" type="submit"><div class="border">Get PreLaunch Access</div></button>
         <% end %>
+
     <% end %>
 </div>
+
+<div style="height: 2px; background: #fff;"></div>
+<div class="clients">
+  <img src="<%= asset_path('home/clients.png') %>" height="63" style="vertical-align: middle;" />
+</div>
+<div class="reviews">
+  <div style="color: #565656; font-family: 'Nunito', sans-serif; font-size: 35.82px; font-weight: 300; line-height: 1em; padding-top: 35px;">WHAT CELEBRITY CLIENTS ARE SAYING</div>
+  <div style="color: #acacac; font-family: 'Nunito', sans-serif; font-size: 19.97px; font-weight: 300; line-height: 1em; padding-top: 10px;">SEE TESTIMONALS BELOW</div>
+
+
+  <div class="reviews-list">
+    <div class="review">
+      <img src="<%= asset_path('home/t1.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Dr.G is the best<br/> nutritionist in the world"</div>
+      <div class="review-author">-OWEN WILSON</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t2.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Working with Philip<br/> changed my life!"</div>
+      <div class="review-author">-GILLIAN ANDERSON</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t3.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Philip is an expert at nutrition<br/> and training. His knowledge is<br/> second to none"</div>
+      <div class="review-author">-JEFF GOLDBUM</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t4.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Philip Goglia is a guru in<br/> nutrition and health"</div>
+      <div class="review-author">-JAI COURTNEY</div>
+    </div>
+
+  </div>
+</div>
+
+<div style="border-top: 1px solid #c8c8c8; height: 36px;"></div>
+<div class="bottom">
+  <div style="font-size: 22.76px; font-weight: 300;color: #565656; font-family: 'Nunito', sans-serif; line-height: 1em; margin-top: 30px;">SPECIAL INSTRUCTIONS:</div>
+  <div style="font-size: 19.97px; font-weight: 300; color: #565656; font-family: 'Nunito', sans-serif; line-height: 1.35em; margin-top: 25px;">By getting insider’s access, you’ll be locking in your spot and will be one of the first to know when Dr. Goglias<br/> fat burning system is available to the public. Of course there is <strong>ZERO OBLIGATION</strong> what so ever and just for<br/> checking out this amazing potentially life changing opportunity, <strong>we’ll give you a free copy of Goglia’s<br/> Healthy eating cookbook</strong>. <span style="background: #ffffe4">This is strictly limited to 1 per household.<span></div>
+</div>
+
+
+<script>
+// Google Fonts
+WebFontConfig = {
+  google: { families: [ 'Lato:400,700,300:latin' ] }
+};
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+
+// Initialize Share-Buttons
+$.contactButtons({
+  effect  : 'slide-on-scroll',
+  buttons : {
+    'facebook':   { class: 'facebook', use: true, link: 'https://www.facebook.com/pages/mycompany', extras: 'target="_blank"' },
+    'linkedin':   { class: 'linkedin', use: true, link: 'https://www.linkedin.com/company/mycompany' },
+    'google':     { class: 'gplus',    use: true, link: 'https://plus.google.com/myidongoogle' },
+    'mybutton':   { class: 'git',      use: true, link: 'http://github.com', icon: 'github', title: 'My title for the button' },
+    'phone':      { class: 'phone separated',    use: true, link: '+000' },
+    'email':      { class: 'email',    use: true, link: 'test@web.com' }
+  }
+});
+
+var selectedDate = new Date().valueOf() + 2*60*1000;
+$('#clock').countdown(selectedDate.toString(), function(event) {
+   $(this).html(event.strftime('%M:%S'));
+});
+</script>

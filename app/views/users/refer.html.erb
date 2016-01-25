@@ -8,17 +8,19 @@
 <div class="hero">
     <div class="page-content clearfix">
         <div class="mammoth">
+            <!--
             <span class="need brandon">Shaving Is<br>Evolving</span>
+            -->
         </div>
         <div class="share-wrap">
             <p class="why brandon">Don't leave your friends behind</p>
-            <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
-            <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn Harry's goods for<br>each friend who signs up.</p>
+            <p class="title brandon">INVITE YOUR FRIENDS AND<br>FAMILY & WIN AMAZING PRIZES!</p>
+            <p class="subtitle brandon">Simply share your personal link via Email, Facebook and<br/> Twitter and earn prizes for every friend that joins the group!</p>
             <div class="copy-link brandon"><%= root_url %>?ref=<%= @user.referral_code %></div>
-            <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+            <% twitter_message = "#Weightloss is evolving, G-plans is coming! Excited for @GogliaNutrition to launch." %>
             <div class="social-links">
-                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-                <div class="sep"></div>
+                Share HERE:
+                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=GogliaNutrition - Gplans!" class="fb" target="_blank"></a>
                 <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
             </div>
         </div>
@@ -43,18 +45,23 @@
  %>
 <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
     <div class="page-content">
-        <p class="callout brandon">Here's How It Works:</p>
+        <p class="callout brandon">Here's how it works!</p>
         <ul class="products clearfix">
-            <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Harry's Product</p></li>
+            <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">PRIZES YOU<br/>COULD WIN</p></li>
             <% stops.each do |stop| %>
                 <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
                     <div class="circle"><%= stop["count"] %></div>
                     <div class="sep"></div>
+<!--
                     <p><%= stop["html"].html_safe %></p>
-
+-->
+<!--
                     <div class="tooltip">
-                        <img src="<%= stop["image"] %>" height="254">
-                    </div>
+-->
+                        <img src="<%= stop["image"] %>" height="309" width="247">
+<!--   
+                   </div>
+-->
                 </li>
             <% end %>
         </ul>
@@ -81,8 +88,48 @@
             <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
         <% end %>
         <p class="check brandon">Keep checking</p>
-
+<!--
         <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>        
         <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+-->
+
     </div>
+</div>
+
+<div class="clients" style="background: #EFF3F6">
+  <img src="<%= asset_path('home/clients.png') %>" height="63" style="vertical-align: middle;" />
+</div>
+<div class="reviews">
+  <div style="color: #565656; font-family: 'Nunito', sans-serif; font-size: 35.82px; font-weight: 300; line-height: 1em; padding-top: 35px;">WHAT CELEBRITY CLIENTS ARE SAYING</div>
+  <div style="color: #acacac; font-family: 'Nunito', sans-serif; font-size: 19.97px; font-weight: 300; line-height: 1em; padding-top: 10px;">SEE TESTIMONALS BELOW</div>
+
+
+  <div class="reviews-list">
+    <div class="review">
+      <img src="<%= asset_path('home/t1.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Dr.G is the best<br/> nutritionist in the world"</div>
+      <div class="review-author">-OWEN WILSON</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t2.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Working with Philip<br/> changed my life!"</div>
+      <div class="review-author">-GILLIAN ANDERSON</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t3.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Philip is an expert at nutrition<br/> and training. His knowledge is<br/> second to none"</div>
+      <div class="review-author">-JEFF GOLDBUM</div>
+    </div>
+    <div class="review">
+      <img src="<%= asset_path('home/t4.png') %>" style="float: left; margin-right: 16px;"/>
+      <div class="review-text">"Philip Goglia is a guru in<br/> nutrition and health"</div>
+      <div class="review-author">-JAI COURTNEY</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bottom">
+  <div style="font-size: 22.76px; font-weight: 300;color: #565656; font-family: 'Nunito', sans-serif; line-height: 1em; margin-top: 30px;">SPECIAL INSTRUCTIONS:</div>
+  <div style="font-size: 19.97px; font-weight: 300; color: #565656; font-family: 'Nunito', sans-serif; line-height: 1.35em; margin-top: 25px;">By getting insider’s access, you’ll be locking in your spot and will be one of the first to know when Dr. Goglias<br/> fat burning system is available to the public. Of course there is <strong>ZERO OBLIGATION</strong> what so ever and just for<br/> checking out this amazing potentially life changing opportunity, <strong>we’ll give you a free copy of Goglia’s<br/> Healthy eating cookbook</strong>. <span style="background: #ffffe4">This is strictly limited to 1 per household.<span></div>
 </div>

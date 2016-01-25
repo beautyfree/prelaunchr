@@ -9,9 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require reset
+ *= require contact-buttons.css
  *= require_self
  */
 
+body {
+	min-width: 600px;
+}
 
 form{
 	margin-bottom: 0;
@@ -31,11 +35,10 @@ form{
 /* Home */
 
 html.home{
-	background: #EDECEA;
+	background: #eff3f6;
 }
 
 #home{
-	padding-bottom: 50px;
 }
 
 #home .page-content{
@@ -45,86 +48,104 @@ html.home{
 
 #home .hero{
 	width: 100%;
-	height: 446px;
-	background: url(/assets/home/hero.jpg) center center no-repeat;
-	background-size: 1600px 446px;
+	height: 658px;
+	background: url(/assets/home/bg-blue.jpg) center center no-repeat;
+	/*background-size: 1400px 906px;*/
+  background-size: cover;
+  background-color: #0061b2;
 	overflow: hidden;
 	position: relative;
 	letter-spacing: .09em;
 	margin: 0 auto;
-}
-
-#home .hero .large{
-	font-weight: bold;
-	font-size: 40px;
-	color: #074E6F;
-	text-transform: uppercase;
-	margin: 85px 0 0 136px;
-	position: relative;
-	z-index: 2;
-	letter-spacing: 2px;
-}
-
-#home .hero .small{
-	font-weight: bold;
-	color: #955F5D;
-	font-size: 18px;
-	margin: 10px 0 0 115px;
-	line-height: 30px;
-	position: relative;
-	z-index: 2;
-	text-transform: uppercase;
-	text-align: center;
-	width: 375px;
-	letter-spacing: 1px;
+  text-align: center;
 }
 
 #home .form-wrap{
-	height: 80px;
-	width: 411px;
-	margin: 23px auto 0;
+  height: 170px;
+	margin: 0 auto;
+  text-align: center;
 }
 
-#home .form-wrap .key{
-	width: 46px;
-	height: 19px;
-	margin: 0 auto;
-	background: url(/assets/home/key.png) 0 0 no-repeat;
-	background-size: 46px 19px;
+#home .form-wrap .new_user {
+  display: inline-block;
 }
 
 #home .form-wrap .byline{
+  /*
 	font-size: 15px;
-	text-transform: uppercase;
 	color: #074E6F;
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: 2px;
 	margin: 15px 0;
+  */
+
+  line-height: 80px;
+  font-family: 'Nunito', sans-serif;
+  color: #f07600;
+  font-size: 29.67px; /* Approximation due to font substitution */
+  font-weight: 300;
+  text-align: center;
 }
 
 #home .form-wrap .email{
 	float: left;
+  /*
 	font-size: 13px;
 	padding: 8px 0 8px 10px;
 	border: 1px solid #074E6F;
 	width: 256px;
 	outline: none;
 	letter-spacing: 1px;
+  */
+
+  color: #5f5f5f;
+  padding-left: 20px;
+  box-shadow: inset 0px 1px 6px rgba(0,0,0,0.21);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #868686;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  width: 380px;
+  height: 51px;
+  font-size: 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 #home .form-wrap .submit{
-	width: 143px;
-	background: #074E6F;
+	background: #0156aa;
 	float: left;
-	height: 37px;
-	line-height: 37px;
+	height: 54px;
+	line-height: 44px;
 	color: #FFF;
-	font-size: 13px;
-	text-transform: uppercase;
+	font-size: 20px;
 	border: 0;
-	letter-spacing: 2px;
+  font-family: 'Nunito', sans-serif;
+  padding: 0 5px;
+  outline: 0;
+  border-radius: 6px;
+  margin-left: -40px;
+  margin-top: -2px;
+  cursor: pointer;
+  position: relative;
 }
+#home .form-wrap .submit:after {
+  width: 36px;
+  height: 65px;
+  background: url(/assets/home/arrow.png) 0 0 no-repeat;
+  position: absolute;
+  content: '';
+  right: -60px;
+  top: -30px;
+}
+
+#home .form-wrap .submit .border {
+  border: 1px solid #a6c4e1;
+  border-radius: 6px;
+  padding: 0 12px;
+}
+
 
 #home .form-wrap.ended{
 	width: 500px;
@@ -237,8 +258,63 @@ html.home{
 	font-size: 14px;
 	text-align: center;
 }
- 
 
+/* COMMON */
+.clients {
+  background-color: #ffffff;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.reviews {
+  text-align: center;
+  background: #fff;
+  height: 429px;
+}
+.reviews .reviews-list {
+  width: 960px; 
+  margin: 0 auto; 
+  text-align: left; 
+  margin-top: 45px;
+}
+.reviews .review {
+  width: 430px;
+  margin-bottom: 30px;
+  float: left;
+  margin-left: 50px;
+  left: 50px;
+  position: relative;
+}
+.reviews .review-text {
+  color: #595959; 
+  font-family: 'Nunito', sans-serif; 
+  text-decoration: italic; 
+  font-size: 24.15px; 
+  font-weight: 300;
+  line-height: 1.2em;
+}
+.reviews .review-author {
+  color: #565656; 
+  font-family: 'Nunito', sans-serif; 
+  text-decoration: italic; 
+  font-size: 19.6px; 
+  font-weight: 700;
+  line-height: 2em;
+  margin-left: 94px;
+}
+
+.bottom {
+  border-top: 1px solid #c8c8c8;
+  background-color: #eff3f6;
+  height: 279px;
+  text-align: center;
+}
+.bottom strong {
+  color: #000;
+}
 
 /* Refer a friend page */
 
@@ -255,15 +331,15 @@ html.home{
 }
 
 #refer .page-content{
-	width: 1120px;
+	width: 1166px;
 	margin: 0 auto;
 	z-index: 0;
 	position: relative;
 }
 
 #refer .header{
-	height: 50px;
-	background: #074E6F;
+	height: 82px;
+	background: #003f7e;
 	width: 100%;
 	overflow:hidden;
 	z-index: 1;
@@ -294,26 +370,28 @@ html.home{
 	margin-right: 14px;
 	letter-spacing: 1px;
 	background: url(/assets/refer/logo.png) 0 0 no-repeat;
-	background-size: 106px 19px;
-	height: 19px;
-	width: 106px;
+	background-size: 192px 58px;
+	height: 58px;
+	width: 192px;
 	margin-top: 15px;
 }
 
 #refer .hero{
-	background: #F1F0EE;
-	height: 391px;
+	/* background: #fff; */
+  background: #F1F0EE;
+	height: 665px;
 	overflow: hidden;
 }
 
 #refer .mammoth{
-	width: 612px;
-	height: 394px;
-	background: url(/assets/refer/mammoth.png) 0 0 no-repeat;
-	background-size: 610px 394px;
+	width: 965px;
+	height: 612px;
+	background: url(/assets/refer/main.png) 0 0 no-repeat;
+	background-size: 965px 612px;
 	overflow: hidden;
 	margin-top: 15px;
 	float: left;
+	position: absolute;
 }
 
 #refer .mammoth .need{
@@ -331,35 +409,42 @@ html.home{
 
 #refer .share-wrap{
 	float: right;
-	width: 400px;
+	width: 575px;
+	height: 415px;
 	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: .13em;
-	margin-right: 60px;
+	/*margin-right: 60px;*/
+	background: #eff3f6;
+	position: absolute;
+	top: 171px;
+	left: 580px;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.62);
 }
 
 #refer .share-wrap .why{
-	font-size: 16px;
-	color: #555556;
-	font-weight: bold;
-	margin-top: 42px;
+	color: #737373;
+	margin-top: 25px;
+	font-family: 'Nunito', sans-serif;
+	font-size: 29.15px;
+	font-weight: 400;
+	line-height: 1em;
 }
 
 #refer .share-wrap .title{
-	font-size: 30px;
-	line-height: 40px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #074E6F;
+	line-height: 1.2em;
+	font-weight: 400;
+	color: #003f7e;
 	margin-top: 18px;
-	letter-spacing: .13em;
+	font-family: 'Nunito', sans-serif;
+	font-size: 32px;
 }
 
 #refer .share-wrap .subtitle{
-	color: #565656;
-	font-size: 14px;
-	text-transform: none;
-	margin-top: 15px;
+	color: #363636;
+	font-size: 18px;
+	margin-top: 20px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	line-height: 1.3em;
 }
 
 #refer .share-wrap .copy-link{
@@ -373,41 +458,51 @@ html.home{
 }
 
 #refer .share-wrap .social-links{
-	width: 120px;
-	height: 37px;
-	margin: 25px auto 0;
 	text-align: center;
+	background: #F0F0F0 none repeat scroll 0% 0%;
+	width: 397px;
+	height: 72px;
+	border: 1px solid #CDCDCD;
+	border-radius: 5px;
+	line-height: 72px;
+	margin: 20px auto 0px;
+	position: relative;
+	font-family: 'Nunito', sans-serif;
+	color: #5f5f5f;
+	font-size: 20px;
+	font-weight: 300;
 }
 
 #refer .share-wrap .social-links a, #refer .share-wrap .social-links div{
 	display: inline-block;
+	vertical-align: middle;
+	margin-left: 50px;
+	top: -2px;
+	position: relative;
 }
 
 #refer .share-wrap .social-links .fb{
 	background: url(/assets/refer/fb.png);
-	background-size: 27px 27px;
-	width: 27px;
-	height: 27px;
+	background-size: 42px 42px;
+	width: 42px;
+	height: 42px;
 }
 
 #refer .share-wrap .social-links .twit{
 	background: url(/assets/refer/twit.png);
-	background-size: 27px 27px;
-	width: 27px;
-	height: 27px;
-}
-
-#refer .share-wrap .social-links .sep{
-	height: 28px;
-	width: 1px;
-	background: #BAB9BA;
-	margin: 0 20px;
+	background-size: 52px 42px;
+	width: 52px;
+	height: 42px;
 }
 
 #refer .prizes{
 	width: 100%;
-	background: #FFF;
-	border-top: 1px solid #D2D1C8;
+  /*
+	background: #eff3f6;
+	border-top: 1px solid #c6c6c6;
+	border-bottom: 1px solid #c6c6c6;
+  */
+  background: #fff;
 	padding-bottom: 100px;
 }
 
@@ -417,12 +512,12 @@ html.home{
 
 #refer .prizes .callout{
 	text-align: center;
-	font-size: 16px;
-	color: #074E6F;
-	font-weight: bold;
-	margin: 20px 0 0 0;
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	color: #21548a;
+	margin: 20px 0px 0px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	font-size: 36.23px;
+	line-height: 1em;
 }
 
 #refer .prizes .progress{
@@ -456,9 +551,9 @@ html.home{
 
 
 #refer .prizes ul.products{
-	height: 105px;
+	height: 380px;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 20px;
 	position: relative;
 	z-index: 1;
 }
@@ -470,7 +565,7 @@ html.home{
 	font-weight: 500;
 	font-size: 14px;
 	float: left;
-	margin-right: 68px;
+	margin-right: 0;
 	width: 165px;
 	font-weight: bold;
 }
@@ -483,13 +578,14 @@ html.home{
 #refer .prizes .products li.title .rewards{
 	margin-top: 45px;
 	letter-spacing: 2px;
+	margin-left: 10px;
 }
 
 #refer .prizes .products li.product{
 	height: 100%;
 	color: #074E6F;
-	width: 125px;
-	margin-right: 129px;
+	width: 247px;
+	margin-right: 0;
 	float: left;
 	position: relative;
 }
@@ -626,13 +722,14 @@ html.home{
 /*
 	RETINA
 */
+/*
 @media only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2) {
 	#home .hero{
-		background: url(/assets/home/hero@2x.jpg) center center no-repeat;
-		background-size: 1600px 446px;
+		background: url(/assets/home/bg-blue.jpg) center center no-repeat;
+		background-size: cover;
 	}
 
 	#home .form-wrap .key{
@@ -685,7 +782,7 @@ only screen and (min-device-pixel-ratio: 2) {
 		background-size: 16px 10px;
 	}
 }
-
+*/
 
 
 

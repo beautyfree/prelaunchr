@@ -5,13 +5,14 @@
 <!--[if IE 9 ]>    <html class="ie9 <%= @bodyId %>"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 <head>
-        <title>Harry&#8217;s &ndash; Tell Friends, Shave for Free</title>
+        <title>GogliaNutrition - Gplans!</title>
         <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
         <link rel="shortcut icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
 
-        <meta property="og:title" content="Harry’s is coming!"/>
-        <meta property="og:description" content="Shaving is evolving. Didn’t want to leave you all behind. Check out Harry’s here."/>
-        <meta property="og:image" content="<%= asset_path("refer/truman.png") %>"/>
+        <meta property="fb:app_id" content="966242223397117"/>
+        <meta property="og:title" content="GogliaNutrition - Gplans!"/>
+        <meta property="og:description" content='Dr. Goglia "Nutritionist to the Stars" has launched his revolutionary, metabolic meal plans to the public... Partner with Goglia today and join us as we embark on a weight loss journey in 2016!'/>
+        <meta property="og:image" content="<%= image_url("refer/truman.png") %>"/>
         <meta property="og:url" content="<%= root_url %>"/>
         <% if @is_mobile %>
             <% if @bodyId == 'home' %>
@@ -21,7 +22,13 @@
             <% end %>
         <% end %>
         <%= stylesheet_link_tag "core.css", :media => "all" %>
+        <%= javascript_include_tag "application"  %>
         <%= csrf_meta_tags %>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:300,400,700' rel='stylesheet' type='text/css'>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
 </head>
 <body id="<%= @bodyId %>">
 
